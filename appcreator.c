@@ -69,10 +69,10 @@ int main(int argc, char** argv) {
     fclose(fakeExecutable);
 
     chmod("/tmp/tmpapp/Contents/MacOS/fakeExecutable", 0755);
-    char * ptr = malloc(strlen(argv[3])+9);
-    strcpy(ptr, "/tmp/");
-    strcat(ptr, argv[3]);
-    strcat(ptr, ".app");
+    char * appName = malloc(strlen(argv[3])+9);
+    strcpy(appName, "/tmp/");
+    strcat(appName, argv[3]);
+    strcat(appName, ".app");
     
     rename("/tmp/tmpapp",ptr);
 }
